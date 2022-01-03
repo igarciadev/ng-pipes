@@ -1,0 +1,158 @@
+<div class="container">
+    <br>
+    <h1>Angular Pipes</h1>
+    <hr>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Variable</th>
+                <th scope="col">Pipe</th>
+                <th scope="col">Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ shortName }}</td>
+                <td>uppercase</td>
+                <td>{{ shortName | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ shortName }}</td>
+                <td>lowercase</td>
+                <td>{{ shortName | lowercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ shortName }}</td>
+                <td>slice:3</td>
+                <td>{{ shortName | slice:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ shortName }}</td>
+                <td>slice:0:3</td>
+                <td>{{ shortName | slice:0:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ numbers }}</td>
+                <td>slice:1:5</td>
+                <td>{{ numbers | slice:1:5 }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number:'3.0-0'</td>
+                <td>{{ PI | number:'3.0-0' }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number:'1.0-2'</td>
+                <td>{{ PI | number:'1.0-2' }}</td>
+            </tr>
+            <tr>
+                <td>{{ cantidad }}</td>
+                <td>percent</td>
+                <td>{{ cantidad | percent }}</td>
+            </tr>
+            <tr>
+                <td>{{ cantidad }}</td>
+                <td>percent:'2.2-2'</td>
+                <td>{{ cantidad | percent:'2.2-2' }}</td>
+            </tr>
+            <tr>
+                <td>{{ cantidad }}</td>
+                <td>number:'.2-2'</td>
+                <td>{{ cantidad | number:'.2-2' }}</td>
+            </tr>
+            <tr>
+                <td>{{ cantidad }}</td>
+                <td>number:'1.2' : 'es-ES'</td>
+                <td>{{ cantidad | number:'1.2' : 'es-ES' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency</td>
+                <td>{{ salario | currency }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency: 'EUR': 'code'</td>
+                <td>{{ salario | currency: 'EUR': 'code' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency: 'EUR': 'symbol'</td>
+                <td>{{ salario | currency: 'EUR': 'symbol' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency: 'EUR': 'symbol-narrow'</td>
+                <td>{{ salario | currency: 'EUR': 'symbol-narrow' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency: 'EUR': 'symbol': '4.0-0'</td>
+                <td>{{ salario | currency: 'EUR': 'symbol': '4.0-0' }}</td>
+            </tr>
+            <tr>
+                <td>Promise response</td>
+                <td>async</td>
+                <td>{{ promiseResponse | async }}</td>
+            </tr>
+            <tr>
+                <td>'new Date()'</td>
+                <td>date</td>
+                <td>{{ fecha | date }}</td>
+            </tr>
+            <tr>
+                <td>'new Date()'</td>
+                <td>date: 'medium'</td>
+                <td>{{ fecha | date: 'medium' }}</td>
+            </tr>
+            <tr>
+                <td>'new Date()'</td>
+                <td>date: 'dd/MM/yyyy'</td>
+                <td>{{ fecha | date: 'dd/MM/yyyy' }}</td>
+            </tr>
+            <tr>
+                <td>'new Date()'</td>
+                <td>date: 'MMMM - dd'</td>
+                <td>{{ fecha | date: 'MMMM - dd' }}</td>
+            </tr>
+            <tr>
+                <td>'new Date()'</td>
+                <td>date: 'MMMM - dd'</td>
+                <td>{{ fecha | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+            </tr>
+            <tr>
+                <td>{{ longName }}</td>
+                <td>capitalized (custom pipe)</td>
+                <td>{{ longName | capitalized }}</td>
+            </tr>
+            <tr>
+                <td>{{ longName }}</td>
+                <td>capitalized: false (custom pipe)</td>
+                <td>{{ longName | capitalized: false }}</td>
+            </tr>
+            <tr>
+                <td>{{ shortName }}</td>
+                <td>password: {{ activar }} (custom pipe)
+                    <br>
+                    <button (click)="activar = !activar" type="button" class="btn btn-outline-primary">
+                        Enable / Disable
+                    </button>
+                </td>
+                <td>{{ shortName | password: activar }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Slice</h4>
+    <ul>
+        <li *ngFor="let item of numbers | slice:5:20"> {{ item }} </li>
+    </ul>
+
+    <h4>JSON</h4>
+    <pre>{{ heroe | json }}</pre>
+
+    <h4>securedom (custom pipe)</h4>
+    <iframe width="420" height="315" [src]="video | securedom:'https://www.youtube.com/embed/'"></iframe>
+
+</div>
