@@ -1,6 +1,6 @@
 # NG-Test-Pipes
 
-This project has been created with Angular-CLI v7.13.1.
+This project has been created with Angular-CLI v7.3.10.
 
 With this test project you can understand and know how to apply some Angular pipes.
 
